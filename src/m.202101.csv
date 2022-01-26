@@ -1,0 +1,7 @@
+item_name,is_expense, quantity,sum_of_one
+tickets,false,1200,160
+potatoes,true,200,25
+baloons,false,1000,15
+popcorn,false,149,300
+tables,true,2500,5
+chairs,true,200,25

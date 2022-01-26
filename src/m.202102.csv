@@ -1,0 +1,8 @@
+item_name,is_expense, quantity, sum_of_one
+sweet apples,true,250,30
+baloons,false,1000,15
+lollipops,false,400,55
+tickets,false,159,200
+tables,true,1,2504
+popcorns,false,1200,170
+milk,true,25,70
