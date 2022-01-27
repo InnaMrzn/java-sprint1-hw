@@ -6,10 +6,11 @@ public class MonthlyReportRow {
     private int amountOfOneExpense;
 
     MonthlyReportRow(String itemName, String isExpense, String expenseQty, String amountOfOneExpense){
-        this.itemName=itemName;
+
+        this.itemName = itemName;
         this.isExpense = Boolean.parseBoolean(isExpense);
-        this.expenseQty=Integer.parseInt(expenseQty.trim());
-        this.amountOfOneExpense=Integer.parseInt(amountOfOneExpense.trim());
+        this.expenseQty = Integer.parseInt(expenseQty.trim());
+        this.amountOfOneExpense = Integer.parseInt(amountOfOneExpense.trim());
     }
 
     public String getItemName() {

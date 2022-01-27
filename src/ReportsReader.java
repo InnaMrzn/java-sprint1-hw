@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -74,9 +75,12 @@ public class ReportsReader {
     private String readFileContentsOrNull(String filePath) {
 
         try {
-            String directoryPath = "C:\\\\Users\\Imurzina\\IdeaProjects\\java-sprint1-hw\\src\\";
-            String fullPath = directoryPath+filePath;
-            return Files.readString(Path.of(fullPath));
+            String resourcesFolder = "resources\\";
+            Path path = Paths.get(resourcesFolder+filePath);
+            Path fullPath = path.toAbsolutePath();
+
+            return Files.readString(fullPath);
+
         } catch (IOException e) {
             System.out.println("Невозможно прочитать файл с отчётом. Возможно, файл не находится в нужной директории.");
             return null;

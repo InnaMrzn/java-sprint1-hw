@@ -13,20 +13,20 @@ public class Main {
             if (command == 1) {
                 //read all monthly expenses
                 reader.createAllMonthsReportsMap(2021);
+                System.out.println("Все месячные отчеты успешно считаны");
 
             } else if (command == 2) {
                 //read yearly expenses
                 reader.createYearlyReportMap(2021);
-                for (String month: reader.getYearlyReportMap().keySet()){
-                    HashMap<String, YearlyReportRow> expensesReport = reader.getYearlyReportMap().get(month);
-                }
+                System.out.println("Годовой отчет успешно считан");
+
             } else if (command == 3) {
 
                 if (reader.getYearlyReportMap()!=null && reader.getMonthlyReportsMap()!=null) {
                     ReportsAnalizer analyzer = new ReportsAnalizer();
                     ArrayList<String> errorMonths = analyzer.checkExpenses(reader);
                     if (errorMonths.size()>0){
-                        System.out.println("Обанаружены несоответствия в суммах расходом месячного и годового баланса за следующие месяцы:");
+                        System.out.println("Обанаружены несоответствия за следующие месяцы:");
                         for (String month: errorMonths) {
                             System.out.println(month);
                         }
@@ -79,6 +79,7 @@ public class Main {
 
 
             } else if (command == 0) {
+                scanner.close();
                 break;
             } else {
                 System.out.println("Такого пункта меню не существует, пожалуйста попробуйте еще раз");
